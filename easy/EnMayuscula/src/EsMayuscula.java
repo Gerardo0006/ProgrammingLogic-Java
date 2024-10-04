@@ -3,29 +3,22 @@ import java.util.Scanner;
 public class EsMayuscula {
 
     public String cadenaUpperCase(String cadena) {
-        String upperCaseCadena = cadena;
-        String firstLetter, restOfWord;
-        int longitud = cadena.length();
-
-        //Recorremos el String
-        for (int i = 0; i < longitud; i++) {
-            if (cadena.charAt(i) == '')
-            /*if (Character.isUpperCase(cadena.charAt(0))) {
-                upperCaseCadena += cadena.charAt(0);
-            } else {
-                upperCaseCadena += cadena.substring(0, 1).toUpperCase();
-            }*/
-
-            //Probando algoritmo para la palabra 'hola'
-            if (Character.isLowerCase(cadena.charAt(0))) {
-                firstLetter = cadena.substring(0, 1).toUpperCase();
-                restOfWord = cadena.substring(1, 4);
-                upperCaseCadena = firstLetter.concat(restOfWord);
-            }/* else if (cadena.charAt(i) != ' '){
-                upperCaseCadena += cadena.charAt(i);
-            }*/
+        if (cadena == null || cadena.isEmpty()) {
+            return cadena; // Manejo de cadenas vacías o nulas
         }
-        return upperCaseCadena;
+
+        String[] palabras = cadena.split(" "); // Dividir la cadena en palabras
+        StringBuilder resultado = new StringBuilder();
+
+        for (String palabra : palabras) {
+            if (!palabra.isEmpty()) {
+                String primeraLetra = palabra.substring(0, 1).toUpperCase(); // Primera letra en mayúscula
+                String restoPalabra = palabra.substring(1); // Resto de la palabra
+                resultado.append(primeraLetra).append(restoPalabra).append(" "); // Construir resultado
+            }
+        }
+
+        return resultado.toString();
     }
 
     public static void main(String[] args) {
@@ -43,6 +36,5 @@ public class EsMayuscula {
 
         //Mandamos llamar a la función
         System.out.println(upperCaseCadena);
-
     }
 }
