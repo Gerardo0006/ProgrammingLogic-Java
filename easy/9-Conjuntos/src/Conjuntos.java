@@ -1,16 +1,17 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Conjuntos {
 
     public static int[] RetornaArray(int[] array1, int[] array2, boolean bool){
-        int cont = 0;
-        int[] arrayFinal = new int[cont];
+        int[] resultadoArrays = {};
+        ArrayList<Integer> arrayFinal = new ArrayList<>();
         if (bool){
             int index = 0;
             for (int i=0; i<array1.length; i++){
                 for (int j=0; j<array2.length; j++){
                     if (array1[i] == array2[j]){
-                        arrayFinal[index] = array1[i];
+                        arrayFinal.add(array1[i]);
                         index++;
                         break;
                     }
@@ -18,9 +19,15 @@ public class Conjuntos {
             }
         }
 
+        resultadoArrays = arrayFinal.toArray(resultadoArrays);
+
         //Imprimimos el arrayFinal
-        for (int index=0; index<arrayFinal.length; index++){
-            System.out.print("[" + arrayFinal[index] + "]");
+//        for (int index=0; index<arrayFinal.size(); index++){
+//            System.out.print("[" + arrayFinal.get(index) + "]");
+//        }
+
+        for (int i = 0; i < resultadoArrays.length; i++) {
+            System.out.println("[" + resultadoArrays[i] + "]");
         }
 
 
