@@ -56,7 +56,7 @@ public class CuadradoYTriangulo2D {
         for (int i = 0; i < matrizTriangulo.length; i++) {
             for (int j = 0; j < matrizTriangulo[i].length; j++) {
                 if (i==0 || i==1){
-                    System.out.print(" ");
+                    System.out.print("");
                 }
                 System.out.print(matrizTriangulo[i][j]);
             }
