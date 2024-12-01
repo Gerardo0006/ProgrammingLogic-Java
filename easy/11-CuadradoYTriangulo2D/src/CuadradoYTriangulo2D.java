@@ -21,22 +21,7 @@ public class CuadradoYTriangulo2D {
 
 //        //Calculamos la base del triángulo
         String[][] matrizTriangulo = new String[lado][lado];
-//        int mitadCreciente, mitadDecreciente;
-//        for (int i = 0; i< matrizTriangulo.length; i++){
-//            for (int j = 0; j<lado; j++){
-//                if (i == matrizTriangulo[i].length){
-//                    matrizTriangulo[i][j] = "*";
-//                }
-//            }
-//        }
-//        //Imprimiendo el Triángulo
-//        System.out.println("Imprimiendo Triángulo");
-//        for (int i = 0; i< matrizTriangulo.length; i++){
-//            for (int j = 0; j<matrizTriangulo[i].length; j++){
-//                System.out.print(matrizTriangulo[i][j]);
-//            }
-//            System.out.println();
-//        }
+
         // Inicializando la matriz con espacios en blanco
         for (int i = 0; i < matrizTriangulo.length; i++) {
             for (int j = 0; j < matrizTriangulo[i].length; j++) {
@@ -59,6 +44,18 @@ public class CuadradoYTriangulo2D {
                     System.out.print("");
                 }
                 System.out.print(matrizTriangulo[i][j]);
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //Pirámide
+        System.out.println("Imprimiendo Pirámide:");
+        String[][] matrizPiramide = new String[lado][lado];
+        for (int i=0; i<matrizPiramide.length; i++){
+            for (int j=0; j<matrizPiramide[i].length; j++){
+                System.out.print("* ");
             }
             System.out.println();
         }
